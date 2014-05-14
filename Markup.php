@@ -42,7 +42,7 @@ public function title($text){
 /*
 * text function should be used for any body text 
 */
-public function($text){
+public function text($text){
   return "<p>$text</p>";
 }
 }
