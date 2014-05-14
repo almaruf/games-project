@@ -24,10 +24,10 @@ private $number = 1;
   }
 
 /*
-* h1 function should be used for Slogan 
+* h1 function should be used for Bold letter with a background color
 */
   public function h1($text){
-      return "<h1>$text</h1>";
+      return "<div  style='background-color: #000; font-color: #fff'><h1>$text</h1>";
   }
 
 
