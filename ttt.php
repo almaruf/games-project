@@ -5,8 +5,8 @@ echo "Won - " . var_dump($t->check());
 
 class T{
     const GAME_NAME = 'TTT';
-    const USER_VALUE = 1;
-    const SYS_VALUE = 2;
+    const USER_VALUE = 'X';
+    const SYS_VALUE = 'O';
     private $_s;
     private $_template = array(
         'a1' => null, 'a2' => null, 'a3' => null,
@@ -21,7 +21,7 @@ class T{
         }else{
             $index = $_GET['ur'];
             if(null === $_SESSION[ self::GAME_NAME ][ $index ]){
-                $_SESSION[ self::GAME_NAME ][ $index ] = 1;
+                $_SESSION[ self::GAME_NAME ][ $index ] = self::USER_VALUE;
             }
         }
 
@@ -97,10 +97,8 @@ class T{
     }
 
     public function systemResponse(){
-        $moveMade = false;
-
         // 1. Take a winning move
-        $moveMade = $this->tier1Move($sysOrUser);
+        return $this->tier1Move($sysOrUser);
         
         // 2. Block Opponent winning move
         if(false === $moveMade){
@@ -166,15 +164,6 @@ class T{
             && $this->_s['c1'] == $this->_s['c2']
             && $this->_s['c2'] ==  $this->_s['c3']){
                return $this->_s['c1'];
-        }
-    }
-
-    public function check(){
-        $winner = $this->winner();
-
-        if($winner){
-            return $winner;
-        }else{
         }
     }
 }
