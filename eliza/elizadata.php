@@ -4,14 +4,14 @@
 // entries prestructured as layed out in Weizenbaum's description 
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
-array elizaInitials = (
+$elizaInitials = array (
 "How do you do.  Please tell me your problem.",
 // additions (not original)
 "Please tell me what's been bothering you.",
 "Is something troubling you ?"
 );
 
-array elizaFinals = (
+$elizaFinals = array (
 "Goodbye.  It was nice talking to you.",
 // additions (not original)
 "Goodbye.  This was really a nice talk.",
@@ -20,7 +20,7 @@ array elizaFinals = (
 "Maybe we could discuss this moreover in our next session ?   Goodbye."
 );
 
-array elizaQuits = (
+$elizaQuits = array (
 "bye",
 "goodbye",
 "done",
@@ -28,7 +28,7 @@ array elizaQuits = (
 "quit"
 );
 
-array elizaPres = (
+$elizaPres = array (
 "dont", "don't",
 "cant", "can't",
 "wont", "won't",
@@ -49,7 +49,7 @@ array elizaPres = (
 "equivalent", "alike"
 );
 
-array elizaPosts = (
+$elizaPosts = array (
 "am", "are",
 "your", "my",
 "me", "you",
@@ -61,7 +61,7 @@ array elizaPosts = (
 "i'm", "you are"
 );
 
-array elizaSynons = (
+$elizaSynons = array (
     array(
     "be" => ("am", "is", "are", "was"),
     "belief" => ("feel", "think", "believe", "wish"),
@@ -75,7 +75,7 @@ array elizaSynons = (
 );
 
 
-array elizaKeywords = (
+$elizaKeywords = array (
 /*
   Array of
   ["<key>", <rank>, [
@@ -92,99 +92,175 @@ array elizaKeywords = (
   ]]
 */
 
-array "xnone", 0, [
- ["*", [
-     "I'm not sure I understand you fully.",
-     "Please go on.",
-     "What does that suggest to you ?",
-     "Do you feel strongly about discussing such things ?",
-     "That is interesting.  Please continue.",
-     "Tell me more about that.",
-     "Does talking about this bother you ?"
-  ]]
-]],
-["sorry", 0, [
- ["*", [
-     "Please don't apologise.",
-     "Apologies are not necessary.",
-     "I've told you that apologies are not required.",
-     "It did not bother me.  Please continue."
-  ]]
-]],
-["apologise", 0, [
- ["*", [
-     "goto sorry"
-  ]]
-]],
-["remember", 5, [
- ["* i remember *", [
-     "Do you often think of (2) ?",
-     "Does thinking of (2) bring anything else to mind ?",
-     "What else do you recollect ?",
-     "Why do you remember (2) just now ?",
-     "What in the present situation reminds you of (2) ?",
-     "What is the connection between me and (2) ?",
-     "What else does (2) remind you of ?"
-  ]],
- ["* do you remember *", [
-     "Did you think I would forget (2) ?",
-     "Why do you think I should recall (2) now ?",
-     "What about (2) ?",
-     "goto what",
-     "You mentioned (2) ?"
-  ]],
- ["* you remember *", [
-     "How could I forget (2) ?",
-     "What about (2) should I remember ?",
-     "goto you"
-  ]]
-]],
-["forget", 5, [
- ["* i forget *", [
-     "Can you think of why you might forget (2) ?",
-     "Why can't you remember (2) ?",
-     "How often do you think of (2) ?",
-     "Does it bother you to forget that ?",
-     "Could it be a mental block ?",
-     "Are you generally forgetful ?",
-     "Do you think you are suppressing (2) ?"
-  ]],
- ["* did you forget *", [
-     "Why do you ask ?",
-     "Are you sure you told me ?",
-     "Would it bother you if I forgot (2) ?",
-     "Why should I recall (2) just now ?",
-     "goto what",
-     "Tell me more about (2)."
-  ]]
-]],
-["if", 3, [
- ["* if *", [
-     "Do you think it's likely that (2) ?",
-     "Do you wish that (2) ?",
-     "What do you know about (2) ?",
-     "Really, if (2) ?",
-     "What would you do if (2) ?",
-     "But what are the chances that (2) ?",
-     "What does this speculation lead to ?"
-  ]]
-]],
-["dreamed", 4, [
- ["* i dreamed *", [
-     "Really, (2) ?",
-     "Have you ever fantasized (2) while you were awake ?",
-     "Have you ever dreamed (2) before ?",
-     "goto dream"
-  ]]
-]],
-["dream", 3, [
- ["*", [
-     "What does that dream suggest to you ?",
-     "Do you dream often ?",
-     "What persons appear in your dreams ?",
-     "Do you believe that dreams have something to do with your problem ?"
-  ]]
-]],
+array(
+    "xnone", 
+    0, 
+    array(
+        "*", 
+        array(
+            "I'm not sure I understand you fully.",
+            "Please go on.",
+            "What does that suggest to you ?",
+            "Do you feel strongly about discussing such things ?",
+            "That is interesting.  Please continue.",
+            "Tell me more about that.",
+            "Does talking about this bother you ?"
+        )
+    )
+),
+array(
+    "sorry", 
+    0, 
+    array(
+        array(
+            "*", 
+            array(
+                "Please don't apologise.",
+                "Apologies are not necessary.",
+                "I've told you that apologies are not required.",
+                "It did not bother me.  Please continue."
+            ),
+        ),
+    ),
+),
+array(
+    "sorry", 
+    0, 
+    array(
+        array(
+            "*", 
+            array(
+                "goto sorry"
+            ),
+        ),
+    ),
+),
+array(
+    "remember", 
+    5, 
+    array(
+        array(
+            "* i remember *", 
+            array(
+                "Do you often think of (2) ?",
+                 "Does thinking of (2) bring anything else to mind ?",
+                 "What else do you recollect ?",
+                 "Why do you remember (2) just now ?",
+                 "What in the present situation reminds you of (2) ?",
+                 "What is the connection between me and (2) ?",
+                 "What else does (2) remind you of ?",
+            ),
+        ),
+        array(
+            "* do you remember *", 
+            array(
+                "Did you think I would forget (2) ?",
+                "Why do you think I should recall (2) now ?",
+                "What about (2) ?",
+                "goto what",
+                "You mentioned (2) ?",
+            ),
+        ),
+        array(
+            "* you remember *", 
+            array(
+                "How could I forget (2) ?",
+                "What about (2) should I remember ?",
+                "goto you",
+            ),
+        ),
+        array(
+            "* you remember *", 
+            array(
+                "How could I forget (2) ?",
+                "What about (2) should I remember ?",
+                "goto you",
+            ),
+        ),
+    ),
+),
+
+array(
+    "forget", 
+    5, 
+    array(
+        array(
+            "* i forget *", 
+            array(
+                "Can you think of why you might forget (2) ?",
+                "Why can't you remember (2) ?",
+                "How often do you think of (2) ?",
+                "Does it bother you to forget that ?",
+                "Could it be a mental block ?",
+                "Are you generally forgetful ?",
+                "Do you think you are suppressing (2) ?",
+            ),
+        ),
+        array(
+            "* did you forget *", 
+            array(
+                "Why do you ask ?",
+                "Are you sure you told me ?",
+                "Would it bother you if I forgot (2) ?",
+                "Why should I recall (2) just now ?",
+                "goto what",
+                "Tell me more about (2)."
+            ),
+        ),
+    ),
+),
+
+array(
+    "if", 
+    3, 
+    array(
+        array(
+            "* if *", 
+            array(
+                "Do you think it's likely that (2) ?",
+                "Do you wish that (2) ?",
+                "What do you know about (2) ?",
+                "Really, if (2) ?",
+                "What would you do if (2) ?",
+                "But what are the chances that (2) ?",
+                "What does this speculation lead to ?",
+            ),
+        ),
+    ),
+),
+
+array(
+    "dreamed", 
+    4, 
+    array(
+        array(
+            "* i dreamed *", 
+            array(
+                "Really, (2) ?",
+                "Have you ever fantasized (2) while you were awake ?",
+                "Have you ever dreamed (2) before ?",
+                "goto dream",
+            ),
+        ),
+    ),
+),
+
+array(
+    "dream", 
+    3, 
+    array(
+        array(
+            "*", 
+            array(
+                "What does that dream suggest to you ?",
+                "Do you dream often ?",
+                "What persons appear in your dreams ?",
+                "Do you believe that dreams have something to do with your problem ?",
+            ),
+        ),
+    ),
+),
+
 ["perhaps", 0, [
  ["*", [
      "You don't seem quite certain.",
